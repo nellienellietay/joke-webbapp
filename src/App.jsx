@@ -1,8 +1,9 @@
+import HomePage from "./pages/HomePage";
+
 function App() {
   return (
     <main>
-      <h1>Joke App</h1>
-      <p>Setup works</p>
+      <HomePage />
     </main>
   );
 }
