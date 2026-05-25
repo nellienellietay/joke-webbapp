@@ -1,11 +1,14 @@
-function JokeCard () {
+function JokeCard ({ joke }) {
     return (
         <article>
-            <p>This is a test joke</p>
-            <p>Category: test</p>
+            <p>{joke.joke}</p>
+
+            <p>Category: {joke.category}</p>
+
+            {/* Ej implementerat */}
             <button>Add to favourites</button>
         </article>
     );
 }
 
-export default JokeCard
+export default JokeCard;
