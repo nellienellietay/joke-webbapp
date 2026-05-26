@@ -33,14 +33,27 @@ function HomePage() {
     }
 
     return (
-        <section>
-            <h1>Home</h1>
+        <section className="home-page">
+            <div className="joke-layout">
 
-            {/* Skickar funktionen till dropdown-komponenten*/}
-            <CategoryFilter onCategoryChange={handleCategoryChange} />
+                <div className="category-area">
+                    {/* Skickar funktionen till dropdown-komponenten*/}
+                    <CategoryFilter onCategoryChange={handleCategoryChange} />
+                </div>
 
-            {/* Visar JokeCard först när ett skämt har hämtats */}
-            {joke && <JokeCard joke={joke} />}
+                <button className="arrow-button">
+                    <img scr="/left-arrow" alt="previous joke" />
+                </button>
+
+                {/* Visar JokeCard när ett skämt har hämtats */}
+                {joke && <JokeCard joke={joke} />}
+
+                <button className="arrow-button">
+                    <img src="/right-arrow" alt="next joke" />
+                </button>
+
+                <button className="favourite-button">Add to favourites</button>
+            </div>
         </section>
     );
 }

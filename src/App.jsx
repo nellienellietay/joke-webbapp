@@ -2,9 +2,18 @@ import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <main>
-      <HomePage />
-    </main>
+    <div className="app">
+      <header className="hero">
+        <h1>Jokester</h1>
+      </header>
+
+      {/* Navbar komponent saknas just nu 
+      <Navbar />*/}
+
+      <main>
+        <HomePage />
+      </main>
+    </div>
   );
 }
 

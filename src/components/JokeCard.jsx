@@ -1,6 +1,6 @@
 function JokeCard ({ joke }) {
     return (
-        <article>
+        <article className="joke-card">
             <p>{joke.joke}</p>
 
             <p>Category: {joke.category}</p>
