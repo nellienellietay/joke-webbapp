@@ -1,27 +1,45 @@
 import { useEffect, useState } from "react";
 import { getJoke } from "../services/jokeApi";
 import JokeCard from "../components/JokeCard";
+import CategoryFilter from "../components/CategoryFilter";
 
 function HomePage() {
-    // Sparar skämtet vi får från API:et
+
+    // Sparar skämtet
     const [joke, setJoke] = useState(null)
+
+    // Sparar vald kategori
+    const [category, setCategory] = useState("Any");
 
     // Körs en gång när HomePage laddas
     useEffect(() => {
-        // Hämtar ett skämt från API:et
+
+        // Hämtar skämt och uppdaterar sidan med det.
         async function loadJoke() {
             const randomJoke = await getJoke();
-
-            // Uppdaterar sidan med hämtat skämt
             setJoke(randomJoke);
         }
 
         loadJoke();
     }, []);
 
+    // Körs när en kategori väljs i dropdown
+    async function handleCategoryChange(selectedCategory) {
+        setCategory(selectedCategory);
+
+        // Här hämtas och uppdateras nytt skämt från valda kategorin
+        const newJoke = await getJoke(selectedCategory);
+        setJoke(newJoke);
+    }
+
     return (
         <section>
             <h1>Home</h1>
+
+            {/* Skickar funktionen till dropdown-komponenten*/}
+            <CategoryFilter onCategoryChange={handleCategoryChange} />
+
+            <p>Selected category: {category}</p>
 
             {/* Visar JokeCard först när ett skämt har hämtats */}
             {joke && <JokeCard joke={joke} />}
