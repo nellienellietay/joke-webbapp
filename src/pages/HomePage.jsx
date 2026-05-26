@@ -39,8 +39,6 @@ function HomePage() {
             {/* Skickar funktionen till dropdown-komponenten*/}
             <CategoryFilter onCategoryChange={handleCategoryChange} />
 
-            <p>Selected category: {category}</p>
-
             {/* Visar JokeCard först när ett skämt har hämtats */}
             {joke && <JokeCard joke={joke} />}
         </section>
