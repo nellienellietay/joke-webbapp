@@ -1,4 +1,5 @@
 import HomePage from "./pages/HomePage";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
@@ -7,8 +8,7 @@ function App() {
         <h1>Jokester</h1>
       </header>
 
-      {/* Navbar komponent saknas just nu 
-      <Navbar />*/}
+      <Navbar />
 
       <main>
         <HomePage />
