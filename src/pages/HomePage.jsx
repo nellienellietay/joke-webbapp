@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getRandomJoke } from "../services/jokeApi";
+import { getJoke } from "../services/jokeApi";
 import JokeCard from "../components/JokeCard";
 
 function HomePage() {
@@ -10,7 +10,7 @@ function HomePage() {
     useEffect(() => {
         // Hämtar ett skämt från API:et
         async function loadJoke() {
-            const randomJoke = await getRandomJoke();
+            const randomJoke = await getJoke();
 
             // Uppdaterar sidan med hämtat skämt
             setJoke(randomJoke);
