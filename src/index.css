@@ -14,6 +14,7 @@ body {
 .hero h1 {
   font-size: 4rem;
   margin: 0;
+  
 }
 
 .hero p {
@@ -41,8 +42,72 @@ body {
 }
 
 
+.joke-layout {
+  display: grid;
+  grid-template-areas: 
+    ". category ."
+    "previous card next"
+    ". favourite .";
+  grid-template-columns: 1px minmax(280px, 520px) 1px;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-area {
+  grid-area: category;
+  justify-self: center;
+}
+
+.previous-button {
+  grid-area: previous;
+}
+
+.card-area {
+  grid-area: card;
+  max-width: 90%;
+  justify-self: center;
+}
+
+
+.next-button {
+  grid-area: next;
+}
+
+.favourite-button {
+  grid-area: favourite;
+}
+
+.previous-button,
+.next-button {
+  justify-self: center;
+  align-self: center;
+}
+
+.arrow-button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+}
+
 .arrow-button img {
   width: 32px;
   height: 32px;
 }
 
+.joke-card {
+  margin: 1.5rem;
+  border: 4px solid rgb(255, 251, 0);
+  background-color: rgb(255, 248, 255);
+  box-shadow:  0 5px 20px rgba(255, 160, 17, 0.833);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.joke-text {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color:rgb(4, 4, 4);
+  text-decoration: solid;
+}
