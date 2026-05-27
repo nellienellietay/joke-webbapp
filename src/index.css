@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Luckiest+Guy&display=swap');
+
 body {
   margin: 0;
 }
@@ -9,12 +11,16 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  background-color: rgb(255, 255, 255);
 }
 
 .hero h1 {
   font-size: 4rem;
   margin: 0;
-  
+  font-family: "Luckiest guy";
+  letter-spacing: 1rem;
+  font-size: 7rem;
+  color: rgb(89, 30, 239);
 }
 
 .hero p {
