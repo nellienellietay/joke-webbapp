@@ -37,12 +37,12 @@ export function getMyJokes() {
 }
 
 //skapar ett nytt skämt med unikt id och sparar det, returnerar det nya skämtet
-export function addMyJoke(jokeText) {
+export function addMyJoke(jokeText, category) {
     const myJokes = getMyJokes();
     const newJoke = {
         id: Date.now(),
         joke: jokeText,
-        category: "My joke",
+        category: category,
     };
     localStorage.setItem(MY_JOKES_KEY, JSON.stringify([...myJokes, newJoke]));
     return newJoke;
