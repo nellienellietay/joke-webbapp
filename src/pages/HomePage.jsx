@@ -42,14 +42,14 @@ function HomePage() {
                 </div>
 
                 <button className="arrow-button">
-                    <img scr="/left-arrow" alt="previous joke" />
+                    <img src="/left-arrow.svg" alt="previous joke" />
                 </button>
 
                 {/* Visar JokeCard när ett skämt har hämtats */}
                 {joke && <JokeCard joke={joke} />}
 
                 <button className="arrow-button">
-                    <img src="/right-arrow" alt="next joke" />
+                    <img src="/right-arrow.svg" alt="next joke" />
                 </button>
 
                 <button className="favourite-button">Add to favourites</button>
