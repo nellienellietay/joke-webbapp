@@ -1,11 +1,13 @@
 function Navbar() {
     return (
         <nav className="navbar">
-            <button>Home</button>
-            <button>My jokes</button>
-            <button>Add new joke</button>
-            <button>Favourites</button>
-            <button>History</button>
+            <div className="navbar-links">
+                <button>Home</button>
+                <button>My jokes</button>
+                <button>Add new joke</button>
+                <button>Favourites</button>
+                <button>History</button>
+            </div>
         </nav>
     );
 }

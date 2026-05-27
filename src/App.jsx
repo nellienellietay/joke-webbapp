@@ -10,7 +10,7 @@ function App() {
 
       <Navbar />
 
-      <main>
+      <main className="main-content">
         <HomePage />
       </main>
     </div>
