@@ -23,21 +23,21 @@ function FavouritesPage() {
     if (favourites.length === 0) {
         return (
             <section className="favourites-page">
-                <p>Du har inga sparade favoriter än</p>
+                <p>No saved favourites yet</p>
             </section>
         );
     }
 
     return (
         <section className="favourites-page">
-            <h2>Mina favoriter</h2>
+            <h2>My favourites</h2>
 
             {/*kategorifiltret för att filtrera favoriter*/}
             <CategoryFilter onCategoryChange={setFilter} />
 
             {/*visas om inga favoriter matchar vald kategori*/}
             {filteredFavourites.length === 0 ?(
-                <p>Inga favoriter i den kategorin</p>
+                <p>No favourites in that category</p>
             ):(
                 <ul className="favourites-list">
                     {/*loopar igenom filtrerade favoriter och visar dem*/}
@@ -46,7 +46,7 @@ function FavouritesPage() {
                             <p>{joke.joke}</p>
                             <p>Category: {joke.category}</p>
                             <button onClick={() => handleRemove(joke.id)}>
-                                Ta bort
+                                Remove
                             </button>
                         </li>
                     ))}
