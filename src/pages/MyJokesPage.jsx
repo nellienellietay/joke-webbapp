@@ -28,22 +28,22 @@ function MyJokesPage() {
 
     return (
         <section className="my-jokes-page">
-            <h2>Mina egna skämt</h2>
+            <h2>My own jokes</h2>
 
             <div className="add-joke-form">
                 <CategoryFilter onCategoryChange={setCategory} />
                 <textarea
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
-                    placeholder="Skriv ditt skämt här"
+                    placeholder="Write your joke here"
                     rows={3}
                 />
-                <button onClick={handleAdd}>Lägg till ett skämt</button>
+                <button onClick={handleAdd}>Add joke</button>
             </div>
 
             {/*visas om inga egna skämt finns sparade*/}
             {myJokes.length === 0 ? (
-                <p>Du har inte lagt till några egna skämt än</p>
+                <p>No jokes added yet</p>
             ) : (
                 <ul className="my-jokes-list">
                     {/*loopar igenom alla egna skämt och visar dem*/}
@@ -52,7 +52,7 @@ function MyJokesPage() {
                             <p>{joke.joke}</p>
                             <p>Category: {joke.category}</p>
                             <button onClick={() => handleRemove(joke.id)}>
-                                Ta bort
+                                Remove
                             </button>
                         </li>
                     ))}
