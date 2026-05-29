@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getJoke } from "../services/jokeApi";
 import JokeCard from "../components/JokeCard";
 import CategoryFilter from "../components/CategoryFilter";
+import { addToHistory } from "../utils/storage";
 
 function HomePage() {
 
@@ -18,6 +19,7 @@ function HomePage() {
         async function loadJoke() {
             const randomJoke = await getJoke();
             setJoke(randomJoke);
+                if (randomJoke) addToHistory(randomJoke);
         }
 
         loadJoke();
@@ -30,6 +32,7 @@ function HomePage() {
         // Här hämtas och uppdateras nytt skämt från valda kategorin
         const newJoke = await getJoke(selectedCategory);
         setJoke(newJoke);
+            if (newJoke) addToHistory(newJoke);
     }
 
     return (

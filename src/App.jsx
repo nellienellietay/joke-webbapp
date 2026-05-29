@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import FavouritesPage from "./pages/FavouritesPage";
-import HistoryPage from "./pages/FavouritesPage";
+import HistoryPage from "./pages/HistoryPage";
 import MyJokesPage from "./pages/MyJokesPage";
 import Navbar from "./components/Navbar";
 
