@@ -67,11 +67,7 @@ body {
 /* === Vit text bakgrund för ej konflikt med sidans bakgrunds färger === */
 .main-content h2,
 .main-content p:not(.joke-text):not(.history-joke-text),
-.history-page h2,
-.favourites-page h2,
-.favourites-page p,
-.my-jokes-page h2,
-.my-jokes-page p {
+.history-page h2{
   background-color: rgba(255, 255, 255, 0.9);
   padding: 0.75rem 1.5rem;
   border-radius: 2rem;
@@ -82,7 +78,7 @@ body {
 .main-content {
   display: flex;
   justify-content: center;
-  padding-top: 10%;
+  padding-top: 2%;
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -208,6 +204,46 @@ body {
 
 .history-card button:hover {
   background-color: #ffdd55;
+}
+
+/*favourites och my jokes */
+.favourites-page p:not(.joke-text):not(.status-text),
+.my-jokes-page p:not(.joke-text):not(.status-text) {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 2rem !important;
+  color: black !important;
+  display: inline-block !important;
+}
+
+.favourites-page h2,
+.my-jokes-page h2 {
+  font-family: "Luckiest Guy";
+  color: rgb(89, 30, 239);
+  letter-spacing: 0.3rem;
+  background-color: transparent !important;
+  -webkit-text-stroke: 2px black;
+  display: block !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+.favourite-item {
+  background-color: rgb(255, 248, 255) !important;
+}
+
+.my-jokes-page,
+.favourites-page {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.status-text {
+  display: block !important;
+  text-align: center !important;
+  color: white !important;
+  background-color: transparent !important;
+  width: 100% !important;
 }
 
 /* === RESPONSIV DESIGN === */
