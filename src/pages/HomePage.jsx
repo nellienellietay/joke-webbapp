@@ -3,6 +3,7 @@ import { getJoke } from "../services/jokeApi";
 import JokeCard from "../components/JokeCard";
 import CategoryFilter from "../components/CategoryFilter";
 import {addFavourite} from "../utils/storage"
+import { addToHistory } from "../utils/storage";
 
 function HomePage() {
 
@@ -23,6 +24,8 @@ function HomePage() {
             const randomJoke = await getJoke();
             setJoke(randomJoke);
             setFavourite(false);
+            if
+                (randomJoke) addToHistory(randomJoke);
         }
 
         loadJoke();
@@ -36,6 +39,8 @@ function HomePage() {
         const newJoke = await getJoke(selectedCategory);
         setJoke(newJoke);
         setFavourite(false);
+        if
+            (newJoke) addToHistory(newJoke);
     }
 
     //sparar nuvarande skämt som favorit och uppdaterar knappen
