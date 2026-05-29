@@ -27,36 +27,42 @@ function MyJokesPage() {
     }
 
     return (
-        <section className="my-jokes-page">
-            <h2>My own jokes</h2>
+        <section className="container my-jokes-page" style={{width: "100%", display: "block"}}>
+            <h2 className="text-center mb-3">My own jokes</h2>
 
-            <div className="add-joke-form">
+            <div className="d-flex flex-column align-items-center gap-2 mb-4" style={{maxWidth: "600px", margin: "0 auto"}}>
                 <CategoryFilter onCategoryChange={setCategory} />
                 <textarea
+                    className="form-control"
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
                     placeholder="Write your joke here"
                     rows={3}
                 />
-                <button onClick={handleAdd}>Add joke</button>
+                <button className="btn btn-warning w-100 fw-bold" onClick={handleAdd}>Add joke</button>
             </div>
 
             {/*visas om inga egna skämt finns sparade*/}
             {myJokes.length === 0 ? (
-                <p>No jokes added yet</p>
+                <p className="status-text">No jokes added yet</p>
             ) : (
-                <ul className="my-jokes-list">
+                <div className="d-flex flex-column align-items-center gap-3">
                     {/*loopar igenom alla egna skämt och visar dem*/}
                     {myJokes.map(joke => (
-                        <li key={joke.id} className="my-joke-item">
+                        <div key={joke.id} className="joke-card w-100" style={{maxWidth: "600px"}}>
                             <p>{joke.joke}</p>
-                            <p>Category: {joke.category}</p>
-                            <button onClick={() => handleRemove(joke.id)}>
-                                Remove
-                            </button>
-                        </li>
+                            <div className="d-flex justify-content-between align-items-center">
+                                <span>Category: {joke.category}</span>
+                                <button
+                                    className="btn btn-sm btn-danger"
+                                    onClick={() => handleRemove(joke.id)}
+                                >
+                                    Remove
+                                </button>
+                            </div>
+                        </div>
                     ))}
-                </ul>
+                </div>
             )}
         </section>
     );

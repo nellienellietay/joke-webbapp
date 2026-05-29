@@ -22,35 +22,37 @@ function FavouritesPage() {
     //visas om inga favoriter finns sparade
     if (favourites.length === 0) {
         return (
-            <section className="favourites-page">
-                <p>No saved favourites yet</p>
+            <section className="container favourites-page">
+                <p className="status-text">No saved favourites yet</p>
             </section>
         );
     }
 
     return (
-        <section className="favourites-page">
-            <h2>My favourites</h2>
+        <section className="container mt-4 favourites-page">
+            <h2 className="text-center mb-3">My favourites</h2>
 
             {/*kategorifiltret för att filtrera favoriter*/}
-            <CategoryFilter onCategoryChange={setFilter} />
-
+            <div className="d-flex justify-content-center mb-4">
+                <CategoryFilter onCategoryChange={setFilter} />
+            </div>
+            
             {/*visas om inga favoriter matchar vald kategori*/}
             {filteredFavourites.length === 0 ?(
-                <p>No favourites in that category</p>
+                <p className="status-text">No favourites in that category</p>
             ):(
-                <ul className="favourites-list">
+                <div className="d-flex flex-column align-items-center gap-3">
                     {/*loopar igenom filtrerade favoriter och visar dem*/}
                     {filteredFavourites.map(joke => (
-                        <li key={joke.id} className="favourite-item">
+                        <div key={joke.id} className="joke-card w-100" style={{maxWidth: "600px"}}>
                             <p>{joke.joke}</p>
-                            <p>Category: {joke.category}</p>
-                            <button onClick={() => handleRemove(joke.id)}>
-                                Remove
-                            </button>
-                        </li>
+                            <div className="d-flex justify-content-between align-items-center">
+                                <span>Category: {joke.category}</span>
+                                <button className="btn btn-sm btn-danger"onClick={() => handleRemove(joke.id)}>Remove</button>
+                            </div>
+                        </div>
                     ))}
-                </ul>
+                </div>
             )}
         </section>
     );
