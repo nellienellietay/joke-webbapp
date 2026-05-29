@@ -34,9 +34,49 @@ body {
   margin-top: 0.5rem;
 }
 
+.navbar.bg-light {
+  background-color: transparent ;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 3rem;
+  padding: 0.5rem 1rem;
+}
+
 .navbar-toggler {
   font-size: 1rem;
   padding: 0.3rem 0.6rem;
+  background-color: white;
+  border: none;
+  border-radius: 2rem;
+}
+
+.navbar .nav-link {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 2rem;
+  margin: 0 0.2rem;
+  padding: 0.5rem 1.2rem;
+  color: black !important;
+  font-weight: bold;
+}
+
+.navbar .nav-link:hover {
+  background-color: #8b0000;
+  color: white !important;
+}
+
+/* === Vit text bakgrund för ej konflikt med sidans bakgrunds färger === */
+.main-content h2,
+.main-content p:not(.joke-text):not(.history-joke-text),
+.history-page h2,
+.favourites-page h2,
+.favourites-page p,
+.my-jokes-page h2,
+.my-jokes-page p {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  display: inline-block;
+  margin: 0.5rem auto;
 }
 
 .main-content {
@@ -116,10 +156,11 @@ body {
   text-decoration: solid;
 }
 
-/* === HISTORIKSIDAN === */
+/* === HISTORIK SIDAN === */
 .history-page {
   padding: 1rem;
   width: 100%;
+  text-align: center;
 }
 
 .history-grid {
