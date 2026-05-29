@@ -28,16 +28,11 @@ body {
   margin-top: 0.5rem;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 1rem;
-}
+.navbar-toggler {
+  font-size: 1rem;
+  padding: 0.3rem 0.6rem;
+}¨
 
-.navbar-links {
-  display: flex;
-}
 
 .main-content {
   display: flex;
