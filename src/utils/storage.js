@@ -1,5 +1,7 @@
 const FAVOURITES_KEY = "jokester_favourites";
 const MY_JOKES_KEY = "jokester_my_jokes";
+const HISTORY_KEY = "jokester_history";
+const MAX_HISTORY = 20;
 
 //favoriter
 
@@ -52,4 +54,20 @@ export function addMyJoke(jokeText, category) {
 export function removeMyJoke(jokeId) {
     const updated = getMyJokes().filter(j => j.id !== jokeId);
     localStorage.setItem(MY_JOKES_KEY, JSON.stringify(updated));
+}
+
+// History
+
+export function getHistory() {
+    const stored = localStorage.getItem(HISTORY_KEY);
+    return stored ? JSON.parse(stored) : [];
+}
+
+export function addToHistory(joke) {
+    if (!joke || !joke.id) return;
+    const history = getHistory();
+    // Ta bort eventuell dubblett (så att skämtet flyttas högst upp)
+    const filtered = history.filter(item => item.id !== joke.id);
+    const newHistory = [joke, ...filtered].slice(0, MAX_HISTORY);
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(newHistory));
 }
